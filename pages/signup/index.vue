@@ -32,17 +32,13 @@ async function onSubmit(formData: SignUpFormData) {
 </script>
 
 <template>
-  <div class="container n-grid">
+  <div class="container n-grid n-color-surface-raised">
     <main>
       <SignUpForm
-        :pending="pending"
         class="signup-form"
+        :pending="pending"
         @submit="onSubmit"
       />
-
-      <p class="n-align-center n-color-text-weaker n-typescale-s n-margin-bs-l">
-        By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
-      </p>
     </main>
 
     <aside>
@@ -65,19 +61,19 @@ main {
 }
 
 .signup-form {
-  width: 100%;
-  margin: 0 auto auto auto;
+  max-width: 23rem;
+  margin: auto;
 }
 
 aside {
   display: none;
 }
 
-@media screen and (min-width: 1200px) {
-  .container {
-    min-height: 100dvh;
-  }
+.container {
+  min-height: 100dvh;
+}
 
+@media screen and (min-width: 1200px) {
   aside {
     display: block;
     position: relative;

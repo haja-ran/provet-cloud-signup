@@ -78,14 +78,11 @@ function onEmailChange(event: Event) {
 </script>
 
 <template>
-  <provet-stack gap="xl" class="signup-form">
-    <provet-stack gap="s">
-      <h1 class="n-typescale-xxl n-text-bold n-font-weight-heading">
+  <provet-card class="signup-form" padding="l">
+    <provet-stack slot="header" gap="s">
+      <h1 class="n-typescale-l">
         Get Started
       </h1>
-      <p class="n-color-text-weaker">
-        Create a new account
-      </p>
     </provet-stack>
 
     <form id="auth-form" class="n-stack" @submit.prevent="onSubmit">
@@ -168,15 +165,17 @@ function onEmailChange(event: Event) {
         </provet-button>
       </provet-stack>
     </form>
-  </provet-stack>
+
+    <p slot="footer" class="n-align-center n-color-text-weaker n-typescale-m">
+      Already have an account? Sign in
+      <NuxtLink to="/" class="n-color-text">
+        here
+      </NuxtLink>.
+    </p>
+  </provet-card>
 </template>
 
 <style scoped>
-.signup-form {
-  max-width: 23rem;
-  margin: 0 auto;
-}
-
 .show-password-button {
   display: flex;
   pointer-events: auto;

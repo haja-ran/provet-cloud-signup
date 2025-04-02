@@ -11,18 +11,21 @@ useSeoMeta({
 
 <template>
   <provet-stack>
-    <provet-banner variant="success">
-      You're all set! Let's get started on something amazing.
-      Start by adding your first pet to the system by filling out the
-      pet profile form below.
-    </provet-banner>
-
-    <provet-card v-for="n in 3" :key="n">
+    <provet-card padding="l">
       <h3 slot="header" class="n-typescale-l">
-        {{ n }}. Nobis consectetur optio reprehenderit animi?
+        You're all set!
       </h3>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla provident aliquid corporis tempora eius quam, quae vel
-      molestias esse maxime aperiam totam suscipit. Nobis consectetur optio reprehenderit animi? Suscipit, quibusdam?
+
+      <provet-stack>
+        <p>
+          Let's get started on something amazing. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla provident aliquid corporis tempora eius quam, quae vel
+          molestias esse maxime aperiam totam suscipit. Nobis consectetur optio reprehenderit animi? Suscipit, quibusdam?
+        </p>
+
+        <provet-button>
+          Configure your profile
+        </provet-button>
+      </provet-stack>
     </provet-card>
   </provet-stack>
 </template>
