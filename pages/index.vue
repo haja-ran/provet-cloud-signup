@@ -7,7 +7,7 @@ definePageMeta({
 
 <template>
   <div class="page">
-    <NuxtLink class="sign-up-button" to="/sign-up">
+    <NuxtLink class="signup-button" to="/signup">
       <provet-button variant="primary" size="xl">
         Sign Up
       </provet-button>
@@ -21,7 +21,7 @@ definePageMeta({
   display: flex;
 }
 
-.sign-up-button {
+.signup-button {
   margin: auto;
 }
 </style>

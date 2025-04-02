@@ -1,4 +1,4 @@
-# Nuxt Sign-Up Form
+# Nuxt SignUp Form
 
 ## Overview
 
@@ -7,8 +7,7 @@ This project leverages Custom Elements for building a sign-up form in a Nuxt app
 ## Testing Approach
 
 - **Storybook & Playwright:** Component tests are executed within Storybook (accessible at port **6006** after running `npm run storybook`).
-- **Continuous Integration (CI):** Tests can also be executed in the CI pipeline by configuring
-  it to run the `npm run test-storybook` command.
+- **Continuous Integration (CI):** Tests can also be executed in the CI pipeline (or locally without) Storybook by running the `npm run test-storybook` command.
 - **Documentation:** Storybook is used not only for testing but also for component documentation. More details on this approach can be found in the [Storybook Component Testing Guide](https://storybook.js.org/docs/writing-tests/component-testing).
 
 ## Form Validation

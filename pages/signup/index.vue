@@ -21,14 +21,14 @@ async function onSubmit(formData: SignUpFormData) {
   // eslint-disable-next-line no-console
   console.debug('Form submitted:', formData)
 
-  navigateTo('/sign-up/success')
+  navigateTo('/signup/success')
 }
 </script>
 
 <template>
   <div class="container n-grid">
     <main>
-      <SignUpForm :pending="pending" class="sign-up-form" @submit="onSubmit" />
+      <SignUpForm :pending="pending" class="signup-form" @submit="onSubmit" />
 
       <p class="n-align-center n-color-text-weaker n-typescale-s n-margin-bs-l">
         By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
@@ -53,7 +53,7 @@ main {
   flex-direction: column;
 }
 
-.sign-up-form {
+.signup-form {
   width: 100%;
   margin: auto;
 }

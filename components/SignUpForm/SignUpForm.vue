@@ -78,7 +78,7 @@ function onEmailChange(event: Event) {
 </script>
 
 <template>
-  <provet-stack gap="xl" class="sign-up-form">
+  <provet-stack gap="xl" class="signup-form">
     <provet-stack gap="s">
       <h1 class="n-typescale-xxl n-text-bold n-font-weight-heading">
         Get Started
@@ -172,7 +172,7 @@ function onEmailChange(event: Event) {
 </template>
 
 <style scoped>
-.sign-up-form {
+.signup-form {
   max-width: 23rem;
   margin: 0 auto;
 }
