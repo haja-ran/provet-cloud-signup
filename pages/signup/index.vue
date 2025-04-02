@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import type { SignUpFormData } from '~/components/SignUpForm/schema'
 
-definePageMeta({
-  name: 'Sign Up',
+useSeoMeta({
   title: 'Create an account',
+  description: 'Create an account to get started with our services.',
 })
 
 const pending = ref(false)
@@ -12,23 +12,33 @@ async function onSubmit(formData: SignUpFormData) {
   pending.value = true
 
   // Simulate a network request
-  await new Promise(resolve => setTimeout(resolve, 2000))
+  const postRequest = new Promise(resolve => setTimeout(resolve, 1500))
 
-  // Handle successful form submission
-  pending.value = false
+  await postRequest.then(() => {
+    pending.value = false
 
-  // Here you would typically send the form data to your server
-  // eslint-disable-next-line no-console
-  console.debug('Form submitted:', formData)
+    // eslint-disable-next-line no-console
+    console.debug('Form submitted:', formData)
 
-  navigateTo('/signup/success')
+    navigateTo('/signup/success')
+  }).catch((error: unknown) => {
+    pending.value = false
+
+    throw createError({
+      statusText: error instanceof Error ? error.message : 'Internal Server Error',
+    })
+  })
 }
 </script>
 
 <template>
   <div class="container n-grid">
     <main>
-      <SignUpForm :pending="pending" class="signup-form" @submit="onSubmit" />
+      <SignUpForm
+        :pending="pending"
+        class="signup-form"
+        @submit="onSubmit"
+      />
 
       <p class="n-align-center n-color-text-weaker n-typescale-s n-margin-bs-l">
         By continuing, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
@@ -48,6 +58,7 @@ async function onSubmit(formData: SignUpFormData) {
 <style scoped>
 main {
   padding: var(--n-space-m);
+  padding-block-start: calc(var(--n-space-xl) + var(--landing-page-top-bar-height));
   grid-column: span 12;
   display: flex;
   flex-direction: column;
@@ -55,15 +66,11 @@ main {
 
 .signup-form {
   width: 100%;
-  margin: auto;
+  margin: 0 auto auto auto;
 }
 
 aside {
   display: none;
-}
-
-main {
-  padding-top: calc(var(--n-space-xl) + var(--navigation-height));
 }
 
 @media screen and (min-width: 1200px) {
@@ -100,7 +107,7 @@ main {
   aside,
   main {
     padding: var(--n-space-xxl);
-    padding-top: calc(var(--n-space-xxl) + var(--navigation-height));
+    padding-block-start: calc(var(--n-space-xxl) + var(--landing-page-top-bar-height));
     grid-column: span 12;
     min-height: 100%;
   }

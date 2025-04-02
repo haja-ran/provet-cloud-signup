@@ -1,12 +1,13 @@
 <template>
   <div class="page n-reset">
-    <TheNavBar />
+    <LandingPageTopBar />
     <slot />
   </div>
 </template>
 
 <style scoped>
 .page {
-  --navigation-height: 5rem;
+  max-width: var(--landing-page-max-width);
+  margin: 0 auto;
 }
 </style>

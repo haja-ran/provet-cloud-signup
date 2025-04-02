@@ -177,10 +177,6 @@ function onEmailChange(event: Event) {
   margin: 0 auto;
 }
 
-.provet-input {
-  width: 100%;
-}
-
 .show-password-button {
   display: flex;
   pointer-events: auto;

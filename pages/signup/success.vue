@@ -1,44 +1,28 @@
 <script lang="ts" setup>
 definePageMeta({
-  name: 'Success',
-  title: 'You\'re In',
+  layout: 'authenticated',
+})
+
+useSeoMeta({
+  title: 'All Set!',
+  description: 'You are all set! Let’s get started on something amazing.',
 })
 </script>
 
 <template>
-  <div class="container n-color-surface-raised">
-    <div class="inner n-stack n-items-center n-gap-xl">
-      <provet-icon
-        name="interface-checked-circle"
-        size="xl"
-        class="n-color-text-success"
-      />
+  <provet-stack>
+    <provet-banner variant="success">
+      You're all set! Let's get started on something amazing.
+      Start by adding your first pet to the system by filling out the
+      pet profile form below.
+    </provet-banner>
 
-      <div class="n-stack n-items-center n-gap-l">
-        <h1 class="n-typescale-xxxl n-font-weight-heading n-">
-          Success! You're In.
-        </h1>
-
-        <p class="n-typescale-l">Let's get started on something amazing.</p>
-      </div>
-    </div>
-  </div>
+    <provet-card v-for="n in 3" :key="n">
+      <h3 slot="header" class="n-typescale-l">
+        {{ n }}. Nobis consectetur optio reprehenderit animi?
+      </h3>
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla provident aliquid corporis tempora eius quam, quae vel
+      molestias esse maxime aperiam totam suscipit. Nobis consectetur optio reprehenderit animi? Suscipit, quibusdam?
+    </provet-card>
+  </provet-stack>
 </template>
-
-<style scoped>
-.container {
-  display: flex;
-  height: 100dvh;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  padding: var(--n-space-l);
-  padding-block-start:  calc(var(--n-space-l) + var(--navigation-height));
-}
-
-.inner {
-  margin: auto;
-  max-width: 28rem;
-  width: 100%;
-}
-</style>

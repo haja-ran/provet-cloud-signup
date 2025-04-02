@@ -1,2 +1,7 @@
 @import 'minireset.css';
 @import '@provetcloud/css';
+
+:root {
+  --landing-page-top-bar-height: 5rem;
+  --landing-page-max-width: 1920px;
+}
